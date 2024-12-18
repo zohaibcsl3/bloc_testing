@@ -1,7 +1,7 @@
-import 'package:bloc_testing/bloc/counter/counter_bloc.dart';
 import 'package:bloc_testing/bloc/image_picker/image_picker_bloc.dart';
+import 'package:bloc_testing/bloc/post/post_bloc.dart';
 import 'package:bloc_testing/bloc/switch_button/swtich_bloc.dart';
-import 'package:bloc_testing/ui/todo_screen.dart';
+import 'package:bloc_testing/ui/home_screen.dart';
 import 'package:bloc_testing/utils/image_picker_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,13 +19,13 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (_) => CounterBloc(),
-        ),
-        BlocProvider(
           create: (_) => SwitchBloc(),
         ),
         BlocProvider(
           create: (_) => ImagePickerBloc(ImagePickerUtils()),
+        ),
+        BlocProvider(
+          create: (_) => PostBloc(),
         ),
       ],
       child: MaterialApp(
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const TodoScreen(),
+        home: const HomeScreen(),
       ),
     );
   }

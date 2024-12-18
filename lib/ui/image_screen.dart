@@ -119,7 +119,7 @@ class _ImageScreenState extends State<ImageScreen> {
                             ),
                           ),
                         )
-                      : BoxDecoration(
+                      : const BoxDecoration(
                           color: Colors.grey,
                         ),
                   child: state.file == null
