@@ -1,7 +1,11 @@
 import 'package:bloc_testing/ui/counter_screen.dart';
+import 'package:bloc_testing/ui/counter_screen_2.dart';
 import 'package:bloc_testing/ui/image_screen.dart';
+import 'package:bloc_testing/ui/image_screen_2.dart';
 import 'package:bloc_testing/ui/post_screen.dart';
 import 'package:flutter/material.dart';
+
+import 'login_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -37,12 +41,49 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 24.0,
             ),
             CustomButton(
+              buttonName: "Counter 2 Screen",
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const CounterScreen2()),
+                );
+              },
+            ),
+            const SizedBox(
+              height: 24.0,
+            ),
+            CustomButton(
               buttonName: "Counter Screen",
               onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                       builder: (context) => const CounterScreen()),
+                );
+              },
+            ),
+            const SizedBox(
+              height: 24.0,
+            ),
+            CustomButton(
+              buttonName: "Image Picker Screen 2",
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ImageScreen2()),
+                );
+              },
+            ),
+            const SizedBox(
+              height: 24.0,
+            ),
+            CustomButton(
+              buttonName: "Login Screen",
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginScreen()),
                 );
               },
             ),

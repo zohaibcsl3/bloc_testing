@@ -12,9 +12,9 @@ class EnableNotification extends SwitchEvent {}
 class DisableNotification extends SwitchEvent {}
 
 class SliderEvent extends SwitchEvent {
-  double slider;
+  final double slider;
 
-  SliderEvent({required this.slider});
+  const SliderEvent({required this.slider});
 
   @override
   List<Object?> get props => [slider];
